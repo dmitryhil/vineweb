@@ -1,8 +1,9 @@
-/* Мобильные стили для Products компонента */
+/* Мобильные стили для Products компонента - исправленная версия */
 @media (max-width: 768px) {
   .products-section {
     padding: 1rem 0;
     background: #f8f9fa;
+    min-height: 100vh;
   }
 
   .container {
@@ -17,7 +18,7 @@
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     font-weight: 700;
     color: #333;
     margin-bottom: 0.25rem;
@@ -25,324 +26,380 @@
   }
 
   .section-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.8rem !important;
     color: #666;
     line-height: 1.3;
   }
 
-  /* Компактные фильтры для мобильных */
+  /* Компактные фильтры в стиле deep4.html */
   .filters-container {
-    background: white;
-    padding: 0.75rem;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
+    background: white !important;
+    padding: 1rem !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    margin-bottom: 1rem !important;
   }
 
   .filters-row {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    grid-template-columns: none !important;
   }
 
   .search-input,
   .filter-select {
-    padding: 0.5rem 0.6rem;
-    border: 1px solid #e5e5e5;
-    border-radius: 4px;
-    font-size: 0.8rem;
+    padding: 0.75rem !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 6px !important;
+    font-size: 0.9rem !important;
+    background: #f8f9fa !important;
+    transition: all 0.3s ease !important;
   }
 
-  /* Сетка 2x2 для мобильных (4 товара на странице) */
+  .search-input:focus,
+  .filter-select:focus {
+    border-color: #d4af37 !important;
+    background: white !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1) !important;
+  }
+
+  /* ВАЖНО: Принудительная сетка 2x2 для мобильных */
   .products-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding: 0;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* 2 колонки */
+    grid-template-rows: auto auto !important;   /* 2 ряда */
+    gap: 0.75rem !important;
+    margin-bottom: 2rem !important;
+    padding: 0.5rem !important;
+    max-width: 100% !important;
   }
 
   .product-card {
-    background: white;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    position: relative;
+    background: white !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    border: 1px solid #f0f0f0 !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
   .product-card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    border-color: #d4af37 !important;
   }
 
   .product-image-container {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 3/4;
+    position: relative !important;
+    overflow: hidden !important;
+    aspect-ratio: 3/4 !important;
+    background: #f8f9fa !important;
   }
 
   .product-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease !important;
   }
 
-  /* Компактные badges для мобильных */
+  .product-card:hover .product-image {
+    transform: scale(1.05) !important;
+  }
+
+  /* Компактные badges в стиле deep4.html */
   .product-badges {
-    position: absolute;
-    top: 0.25rem;
-    right: 0.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    z-index: 3;
+    position: absolute !important;
+    top: 0.5rem !important;
+    right: 0.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    z-index: 3 !important;
   }
 
   .badge {
-    padding: 0.1rem 0.25rem;
-    border-radius: 4px;
-    font-size: 0.5rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
-    text-align: center;
-    min-width: 28px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    padding: 0.2rem 0.4rem !important;
+    border-radius: 4px !important;
+    font-size: 0.6rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+    text-align: center !important;
+    min-width: 32px !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
   }
 
   .badge-new {
-    background: #4CAF50;
-    color: white;
+    background: #4CAF50 !important;
+    color: white !important;
   }
 
   .badge-hot {
-    background: #FF5722;
-    color: white;
+    background: #FF5722 !important;
+    color: white !important;
   }
 
   .badge-sale {
-    background: #d4af37;
-    color: white;
+    background: #d4af37 !important;
+    color: white !important;
   }
 
+  /* Кнопка избранного в стиле deep4.html */
   .favorite-btn {
-    position: absolute;
-    top: 0.25rem;
-    left: 0.25rem;
-    width: 24px;
-    height: 24px;
-    border: none;
-    background: rgba(255,255,255,0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: #666;
-    z-index: 3;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    font-size: 0.65rem;
+    position: absolute !important;
+    top: 0.5rem !important;
+    left: 0.5rem !important;
+    width: 28px !important;
+    height: 28px !important;
+    border: none !important;
+    background: rgba(255,255,255,0.95) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    color: #666 !important;
+    z-index: 3 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+    font-size: 0.7rem !important;
   }
 
   .favorite-btn:hover,
   .favorite-btn.active {
-    background: #d4af37;
-    color: white;
-    transform: scale(1.05);
+    background: #d4af37 !important;
+    color: white !important;
+    transform: scale(1.1) !important;
   }
 
   /* Убираем quick-view для мобильных */
   .quick-view-btn {
-    display: none;
+    display: none !important;
   }
 
+  /* Информация о товаре в стиле deep4.html */
   .product-info {
-    padding: 0.5rem;
+    padding: 0.75rem !important;
   }
 
   .product-name {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 0.2rem;
-    line-height: 1.2;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    margin-bottom: 0.25rem !important;
+    line-height: 1.3 !important;
+    cursor: pointer !important;
+    transition: color 0.3s ease !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
   }
 
   .product-name:hover {
-    color: #d4af37;
+    color: #d4af37 !important;
   }
 
   .product-category {
-    font-size: 0.6rem;
-    color: #666;
-    margin-bottom: 0.3rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    font-size: 0.65rem !important;
+    color: #666 !important;
+    margin-bottom: 0.4rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
   }
 
   .product-price {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    margin-bottom: 0.3rem;
-    flex-wrap: wrap;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    margin-bottom: 0.4rem !important;
+    flex-wrap: wrap !important;
   }
 
   .current-price {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #d4af37;
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    color: #d4af37 !important;
   }
 
   .original-price {
-    font-size: 0.7rem;
-    color: #999;
-    text-decoration: line-through;
+    font-size: 0.75rem !important;
+    color: #999 !important;
+    text-decoration: line-through !important;
   }
 
   .product-sizes {
-    display: flex;
-    gap: 0.15rem;
-    flex-wrap: wrap;
+    display: flex !important;
+    gap: 0.2rem !important;
+    flex-wrap: wrap !important;
   }
 
   .size-tag {
-    padding: 0.1rem 0.2rem;
-    background: #f8f9fa;
-    border: 1px solid #e5e5e5;
-    border-radius: 2px;
-    font-size: 0.55rem;
-    color: #666;
+    padding: 0.15rem 0.25rem !important;
+    background: #f8f9fa !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 3px !important;
+    font-size: 0.6rem !important;
+    color: #666 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .size-tag:hover {
+    border-color: #d4af37 !important;
+    background: #d4af37 !important;
+    color: white !important;
   }
 
   .size-more {
-    padding: 0.1rem 0.2rem;
-    background: #d4af37;
-    color: white;
-    border-radius: 2px;
-    font-size: 0.55rem;
-    font-weight: 600;
+    padding: 0.15rem 0.25rem !important;
+    background: #d4af37 !important;
+    color: white !important;
+    border-radius: 3px !important;
+    font-size: 0.6rem !important;
+    font-weight: 600 !important;
   }
 
-  /* Компактная пагинация */
+  /* Компактная пагинация в стиле deep4.html */
   .pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-    margin-top: 1.5rem;
-    padding: 0 0.5rem;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin-top: 2rem !important;
+    padding: 0 1rem !important;
   }
 
   .pagination-btn {
-    padding: 0.4rem 0.6rem;
-    border: 1px solid #e5e5e5;
-    background: white;
-    color: #666;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    font-size: 0.75rem;
-    min-width: 30px;
+    padding: 0.5rem 0.75rem !important;
+    border: 1px solid #e5e5e5 !important;
+    background: white !important;
+    color: #666 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+    font-size: 0.8rem !important;
+    min-width: 36px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
   }
 
   .pagination-btn:hover:not(:disabled) {
-    border-color: #d4af37;
-    color: #d4af37;
+    border-color: #d4af37 !important;
+    color: #d4af37 !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
   }
 
   .pagination-btn.active {
-    background: #d4af37;
-    border-color: #d4af37;
-    color: white;
+    background: #d4af37 !important;
+    border-color: #d4af37 !important;
+    color: white !important;
+    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3) !important;
   }
 
   .pagination-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
   }
 
   /* Loading states для мобильных */
   .products-loading,
   .products-error,
   .products-empty {
-    text-align: center;
-    padding: 1.5rem 0.5rem;
+    text-align: center !important;
+    padding: 2rem 1rem !important;
   }
 
   .loading-spinner {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #f3f3f3;
-    border-top: 2px solid #d4af37;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 0.75rem;
+    width: 32px !important;
+    height: 32px !important;
+    border: 3px solid #f3f3f3 !important;
+    border-top: 3px solid #d4af37 !important;
+    border-radius: 50% !important;
+    animation: spin 1s linear infinite !important;
+    margin: 0 auto 1rem !important;
   }
 
   .retry-btn {
-    background: #d4af37;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 0.75rem;
-    font-size: 0.8rem;
+    background: #d4af37 !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin-top: 1rem !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3) !important;
   }
 
   .retry-btn:hover {
-    background: #b8941f;
+    background: #b8941f !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4) !important;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }
 
 /* Специальные стили для iPhone 14 и подобных устройств */
 @media (max-width: 430px) and (min-width: 375px) {
   .container {
-    padding: 0 0.25rem;
+    padding: 0 0.25rem !important;
   }
 
   .products-grid {
-    gap: 0.4rem;
+    gap: 0.5rem !important;
+    padding: 0.25rem !important;
   }
 
   .product-info {
-    padding: 0.4rem;
+    padding: 0.5rem !important;
   }
 
   .product-name {
-    font-size: 0.7rem;
+    font-size: 0.75rem !important;
   }
 
   .current-price {
-    font-size: 0.8rem;
+    font-size: 0.85rem !important;
   }
 
   .section-title {
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
   }
 }
 
-/* Для очень маленьких экранов */
+/* Для очень маленьких экранов - сохраняем 2x2 сетку */
 @media (max-width: 374px) {
   .products-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 0.4rem !important;
+    padding: 0.2rem !important;
+    grid-template-columns: 1fr 1fr !important;
   }
 
   .product-card {
-    max-width: 250px;
-    margin: 0 auto;
+    min-height: 200px !important;
+  }
+
+  .product-info {
+    padding: 0.4rem !important;
+  }
+
+  .product-name {
+    font-size: 0.7rem !important;
+  }
+
+  .current-price {
+    font-size: 0.8rem !important;
   }
 }

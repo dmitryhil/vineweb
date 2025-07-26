@@ -1,0 +1,348 @@
+/* Мобильные стили для Products компонента */
+@media (max-width: 768px) {
+  .products-section {
+    padding: 1rem 0;
+    background: #f8f9fa;
+  }
+
+  .container {
+    padding: 0 0.5rem;
+    max-width: 100%;
+  }
+
+  .products-header {
+    margin-bottom: 1rem;
+    padding: 0 0.25rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.3;
+  }
+
+  /* Компактные фильтры для мобильных */
+  .filters-container {
+    background: white;
+    padding: 0.75rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+  }
+
+  .filters-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-input,
+  .filter-select {
+    padding: 0.5rem 0.6rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+
+  /* Сетка 2x2 для мобильных (4 товара на странице) */
+  .products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .product-image-container {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  /* Компактные badges для мобильных */
+  .product-badges {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    z-index: 3;
+  }
+
+  .badge {
+    padding: 0.1rem 0.25rem;
+    border-radius: 4px;
+    font-size: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    text-align: center;
+    min-width: 28px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  }
+
+  .badge-new {
+    background: #4CAF50;
+    color: white;
+  }
+
+  .badge-hot {
+    background: #FF5722;
+    color: white;
+  }
+
+  .badge-sale {
+    background: #d4af37;
+    color: white;
+  }
+
+  .favorite-btn {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #666;
+    z-index: 3;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    font-size: 0.65rem;
+  }
+
+  .favorite-btn:hover,
+  .favorite-btn.active {
+    background: #d4af37;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  /* Убираем quick-view для мобильных */
+  .quick-view-btn {
+    display: none;
+  }
+
+  .product-info {
+    padding: 0.5rem;
+  }
+
+  .product-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .product-name:hover {
+    color: #d4af37;
+  }
+
+  .product-category {
+    font-size: 0.6rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  .product-price {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .current-price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #d4af37;
+  }
+
+  .original-price {
+    font-size: 0.7rem;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  .product-sizes {
+    display: flex;
+    gap: 0.15rem;
+    flex-wrap: wrap;
+  }
+
+  .size-tag {
+    padding: 0.1rem 0.2rem;
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    font-size: 0.55rem;
+    color: #666;
+  }
+
+  .size-more {
+    padding: 0.1rem 0.2rem;
+    background: #d4af37;
+    color: white;
+    border-radius: 2px;
+    font-size: 0.55rem;
+    font-weight: 600;
+  }
+
+  /* Компактная пагинация */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .pagination-btn {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #e5e5e5;
+    background: white;
+    color: #666;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.75rem;
+    min-width: 30px;
+  }
+
+  .pagination-btn:hover:not(:disabled) {
+    border-color: #d4af37;
+    color: #d4af37;
+  }
+
+  .pagination-btn.active {
+    background: #d4af37;
+    border-color: #d4af37;
+    color: white;
+  }
+
+  .pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Loading states для мобильных */
+  .products-loading,
+  .products-error,
+  .products-empty {
+    text-align: center;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .loading-spinner {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #d4af37;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 0.75rem;
+  }
+
+  .retry-btn {
+    background: #d4af37;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .retry-btn:hover {
+    background: #b8941f;
+  }
+}
+
+/* Специальные стили для iPhone 14 и подобных устройств */
+@media (max-width: 430px) and (min-width: 375px) {
+  .container {
+    padding: 0 0.25rem;
+  }
+
+  .products-grid {
+    gap: 0.4rem;
+  }
+
+  .product-info {
+    padding: 0.4rem;
+  }
+
+  .product-name {
+    font-size: 0.7rem;
+  }
+
+  .current-price {
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 374px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .product-card {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

@@ -43,7 +43,7 @@ const AdminPanel = () => {
   const loadProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/products');
+      const response = await fetch('/api/products');
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -125,8 +125,8 @@ const AdminPanel = () => {
       }
 
       const url = editingProduct 
-        ? `http://localhost:5000/api/products/${editingProduct._id}`
-        : 'http://localhost:5000/api/products';
+        ? `/api/products/${editingProduct._id}`
+        : '/api/products';
       
       const method = editingProduct ? 'PUT' : 'POST';
 
@@ -185,7 +185,7 @@ const AdminPanel = () => {
 
       console.log('Deleting product ID:', productId); // Для отладки
 
-      const response = await fetch(`http://localhost:5000/api/products/${productId}`, {
+      const response = await fetch(`/api/products/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -217,7 +217,7 @@ const AdminPanel = () => {
   // Функция для проверки подключения к серверу
   const checkServerConnection = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/products');
+      const response = await fetch('/api/products');
       if (response.ok) {
         console.log('Server connection OK');
         return true;

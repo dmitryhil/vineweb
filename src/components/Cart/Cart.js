@@ -51,7 +51,7 @@ const Cart = ({ isOpen, onClose, cartItems = [], onUpdateQuantity, onRemoveFromC
                   <div key={`${item._id}-${item.selectedSize}`} className="cart-item">
                     <div className="item-image">
                       <img 
-                        src={item.image ? `http://localhost:5000${item.image}` : 'https://via.placeholder.com/100'} 
+                        src={item.image ? `${item.image}` : 'https://via.placeholder.com/100'}
                         alt={item.name}
                       />
                     </div>

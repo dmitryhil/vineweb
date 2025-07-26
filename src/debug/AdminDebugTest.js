@@ -40,7 +40,7 @@ const AdminDebugTest = () => {
 
   const testApiConnection = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/products');
+      const response = await fetch('/api/products');
       if (response.ok) {
         addTestResult('Подключение к API', 'success', `Статус: ${response.status}`);
       } else {
@@ -59,7 +59,7 @@ const AdminDebugTest = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/admin/stats', {
+      const response = await fetch('/api/admin/stats', {
         headers: {
           'Authorization': `Bearer ${adminToken}`
         }
@@ -85,7 +85,7 @@ const AdminDebugTest = () => {
 
     // Создаем тестовый товар для удаления
     try {
-      const createResponse = await fetch('http://localhost:5000/api/products', {
+      const createResponse = await fetch('/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ const AdminDebugTest = () => {
         addTestResult('Создание тестового товара', 'success', `ID: ${product._id}`);
         
         // Пытаемся удалить
-        const deleteResponse = await fetch(`http://localhost:5000/api/products/${product._id}`, {
+        const deleteResponse = await fetch(`/api/products/${product._id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${adminToken}`

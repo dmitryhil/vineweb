@@ -36,7 +36,7 @@ const HomePage = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/api/cart', {
+      const response = await fetch('/api/cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const HomePage = () => {
     }
     
     try {
-      const response = await fetch('http://localhost:5000/api/wishlist', {
+      const response = await fetch('/api/wishlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ const HomePage = () => {
 
   const removeFromWishlist = async (productId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/wishlist/${productId}`, {
+      const response = await fetch(`/api/wishlist/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('userToken')}`

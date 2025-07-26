@@ -45,7 +45,7 @@ const Products = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/products');
+      const response = await fetch('/api/products');
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -219,7 +219,7 @@ const Products = () => {
             <div key={product._id} className="product-card">
               <div className="product-image-container">
                 <img
-                  src={product.image ? `http://localhost:5000${product.image}` : 'https://via.placeholder.com/300x400/f5f5f5/999999?text=No+Image'}
+                  src={product.image ? `${product.image}` : 'https://via.placeholder.com/300x400/f5f5f5/999999?text=No+Image'}
                   alt={product.name}
                   className="product-image"
                   width="100%"

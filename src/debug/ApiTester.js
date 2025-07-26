@@ -29,7 +29,7 @@ const ApiTester = () => {
         config.body = body;
       }
       
-      const res = await fetch(`http://localhost:5000${endpoint}`, config);
+      const res = await fetch(`${endpoint}`, config);
       const responseText = await res.text();
       
       setResponse({

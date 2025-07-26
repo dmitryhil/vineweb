@@ -39,7 +39,7 @@ const Wishlist = ({ isOpen, onClose, wishlistItems = [], onRemoveFromWishlist, o
                 <div key={item._id} className="wishlist-item">
                   <div className="item-image">
                     <img 
-                      src={item.image ? `http://localhost:5000${item.image}` : 'https://via.placeholder.com/150'} 
+                      src={item.image ? `${item.image}` : 'https://via.placeholder.com/150'}
                       alt={item.name}
                     />
                   </div>

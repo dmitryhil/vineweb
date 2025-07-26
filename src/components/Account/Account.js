@@ -174,7 +174,7 @@ const Account = ({ isOpen, onClose, user, onLogout, wishlistItems, orderHistory 
                     {wishlistItems.map(item => (
                       <div key={item._id} className="wishlist-card">
                         <img 
-                          src={item.image ? `http://localhost:5000${item.image}` : 'https://via.placeholder.com/150'} 
+                          src={item.image ? `${item.image}` : 'https://via.placeholder.com/150'}
                           alt={item.name}
                         />
                         <h4>{item.name}</h4>

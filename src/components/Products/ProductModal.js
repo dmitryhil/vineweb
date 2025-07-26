@@ -117,7 +117,7 @@ const ProductModal = ({ product, isOpen, onClose, onAddToCart }) => {
           <div className="product-modal-images">
             <div className="product-modal-main-image">
               <img 
-                src={product.image ? `http://localhost:5000${product.image}` : '/api/placeholder/400/500'} 
+                src={product.image ? `${product.image}` : '/api/placeholder/400/500'}
                 alt={product.name} 
                 className="main-product-image"
                 onError={(e) => {
@@ -135,7 +135,7 @@ const ProductModal = ({ product, isOpen, onClose, onAddToCart }) => {
                   onClick={() => setCurrentImageIndex(index)}
                 >
                   <img 
-                    src={product.image ? `http://localhost:5000${product.image}` : '/api/placeholder/60/60'} 
+                    src={product.image ? `${product.image}` : '/api/placeholder/60/60'}
                     alt="Thumbnail"
                     onError={(e) => {
                       e.target.src = '/api/placeholder/60/60';

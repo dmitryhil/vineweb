@@ -119,7 +119,7 @@ const ProductList = ({ products, onEdit, onDelete }) => {
             <div key={product._id} className={`product-card ${isLowStock ? 'low-stock' : ''} ${isVeryLowStock ? 'out-of-stock' : ''}`}>
               <div className="product-image">
                 <img 
-                  src={product.image ? `http://localhost:5000${product.image}` : '/placeholder.jpg'} 
+                  src={product.image ? `${product.image}` : '/placeholder.jpg'} 
                   alt={product.name} 
                   onError={(e) => {
                     e.target.src = '/placeholder.jpg';

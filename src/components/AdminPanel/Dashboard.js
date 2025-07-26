@@ -88,7 +88,7 @@ const Dashboard = ({ products }) => {
               {lowStockProducts.map(product => (
                 <div key={product._id} className="low-stock-item">
                   <img 
-                    src={product.image ? `http://localhost:5000${product.image}` : '/placeholder.jpg'} 
+                    src={product.image ? `${product.image}` : '/placeholder.jpg'}
                     alt={product.name}
                     onError={(e) => {
                       e.target.src = '/placeholder.jpg';
@@ -134,7 +134,7 @@ const Dashboard = ({ products }) => {
             {recentProducts.map(product => (
               <div key={product._id} className="recent-product">
                 <img 
-                  src={product.image ? `http://localhost:5000${product.image}` : '/placeholder.jpg'} 
+                  src={product.image ? `${product.image}` : '/placeholder.jpg'}
                   alt={product.name}
                   onError={(e) => {
                     if (e.target.src !== 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg==') {

@@ -10,7 +10,7 @@ export const useProducts = () => {
     try {
       setLoading(true);
       setError(null);
-      const response = await fetch('http://localhost:5000/api/products');
+      const response = await fetch('/api/products');
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -42,7 +42,7 @@ export const useProducts = () => {
         }
       });
 
-      const response = await fetch('http://localhost:5000/api/products', {
+      const response = await fetch('/api/products', {
         method: 'POST',
         body: formData,
       });
@@ -78,7 +78,7 @@ export const useProducts = () => {
         }
       });
 
-      const response = await fetch(`http://localhost:5000/api/products/${productId}`, {
+      const response = await fetch(`/api/products${productId}`, {
         method: 'PUT',
         body: formData,
       });
@@ -105,7 +105,7 @@ export const useProducts = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`http://localhost:5000/api/products/${productId}`, {
+      const response = await fetch(`/api/products/${productId}`, {
         method: 'DELETE',
       });
 

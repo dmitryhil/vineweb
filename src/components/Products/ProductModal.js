@@ -22,6 +22,42 @@ const ProductModal = ({ product, isOpen, onClose, onAddToCart }) => {
   // Use colors from product data or fallback to empty array
   const availableColors = product?.colors || [];
 
+  // Блокировка/разблокировка скролла основного сайта
+  useEffect(() => {
+    if (isOpen) {
+      // Сохраняем текущую позицию скролла
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.classList.add('modal-open');
+      
+      // Предотвращаем скролл на мобильных устройствах
+      const preventScroll = (e) => {
+        if (e.target.closest('.product-modal-details')) {
+          return; // Разрешаем скролл внутри модального окна
+        }
+        e.preventDefault();
+      };
+      
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+      document.addEventListener('wheel', preventScroll, { passive: false });
+      
+      return () => {
+        // Восстанавливаем скролл при закрытии модального окна
+        const scrollY = document.body.style.top;
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.classList.remove('modal-open');
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        
+        document.removeEventListener('touchmove', preventScroll);
+        document.removeEventListener('wheel', preventScroll);
+      };
+    }
+  }, [isOpen]);
+
   // Set initial color when product changes
   useEffect(() => {
     if (product && availableColors.length > 0) {
@@ -55,13 +91,24 @@ const ProductModal = ({ product, isOpen, onClose, onAddToCart }) => {
     alert('Товар додано до кошика!');
   };
 
+  const handleClose = () => {
+    onClose();
+  };
+
+  // Обработчик клика по overlay с проверкой
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+
   if (!isOpen || !product) return null;
 
   return (
-    <div className="product-modal-overlay" onClick={onClose}>
+    <div className="product-modal-overlay" onClick={handleOverlayClick}>
       <div className="product-modal-container" onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
-        <button className="product-modal-close" onClick={onClose}>
+        <button className="product-modal-close" onClick={handleClose}>
           <i className="fas fa-times"></i>
         </button>
         
